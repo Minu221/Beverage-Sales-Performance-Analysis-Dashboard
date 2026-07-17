@@ -52,7 +52,7 @@ GROUP BY year;
 
 ### 2. Monthly Revenue Trend
 Identify seasonality and peak sales months over time.
-
+```sql
 SELECT EXTRACT(YEAR FROM order_date) AS year,
        EXTRACT(MONTH FROM order_date) AS month,
        COUNT(order_id) AS total_orders,
@@ -60,7 +60,7 @@ SELECT EXTRACT(YEAR FROM order_date) AS year,
 FROM beverage_sales
 GROUP BY year, month
 ORDER BY year, month;
-
+```
 <img width="487" height="702" alt="image" src="https://github.com/user-attachments/assets/a88de9fb-5a43-423e-a588-dcb32ed0aa69" />
 <img width="436" height="470" alt="image" src="https://github.com/user-attachments/assets/c601aee9-cf0a-487b-9c1e-e168de206a68" />
 
@@ -70,7 +70,7 @@ ORDER BY year, month;
 Analyze products by sales volume vs. revenue generation.
 * **By Revenue:** High-end items like *Veuve Clicquot* (~202M) and *Moët & Chandon* (~175M) generate the most value.
 * **By Volume:** Affordable options like *Hohes C Orange* (7.7M units) and *Tomato Juice* (7.3M units) have the highest demand.
-
+```sql
 SELECT product,
        SUM(quantity) AS total_quantity,
        SUM(total_price) AS total_revenue
@@ -78,46 +78,44 @@ FROM beverage_sales
 GROUP BY product
 ORDER BY total_revenue DESC
 LIMIT 10;
-
+```
 <img width="507" height="362" alt="image" src="https://github.com/user-attachments/assets/f63df55b-275d-4e01-91ec-ce6c5aa144dd" />
 
 ### 4. Regional Revenue Contribution
 Identify the top geographic areas contributing the most to the company's total sales.
-
+```sql
 SELECT region,
        SUM(total_price) AS total_revenue
 FROM beverage_sales
 GROUP BY region
 ORDER BY total_revenue DESC
 LIMIT 10;
-
+```
 <img width="385" height="357" alt="image" src="https://github.com/user-attachments/assets/6f4458f0-df5b-4700-ac1d-a498d1c1e4f0" />
 
 
 ### 5. Customer Segment Analysis (B2B vs. B2C)
 Compare the purchasing behavior of retail consumers against business clients. While B2C customers account for the majority of order volume (**76.62%**), B2B customers yield a significantly higher Average Order Value (AOV).
-
+```sql
 SELECT customer_type,
        COUNT(order_id) AS total_orders,
        SUM(total_price) AS total_revenue,
        AVG(total_price) AS average_order_value
 FROM beverage_sales
 GROUP BY customer_type;
-
+```
 <img width="678" height="118" alt="image" src="https://github.com/user-attachments/assets/68d48958-3fc8-404c-a349-f71fa36c115a" />
-
-
 
 ### 6. Discount Impact Analysis
 Evaluate if offering higher discounts effectively drives more sales and increases revenue.
-
+```sql
 SELECT discount,
        COUNT(order_id) AS total_orders,
        SUM(quantity) AS total_quantity,
        SUM(total_price) AS total_revenue
 FROM beverage_sales
 GROUP BY discount;
-
+```
 <img width="558" height="176" alt="image" src="https://github.com/user-attachments/assets/7c3a71f2-9a84-4014-bce9-d773d6960c3b" />
 
 
