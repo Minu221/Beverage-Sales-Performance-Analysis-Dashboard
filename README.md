@@ -35,7 +35,7 @@ The dataset is stored in the `beverage_sales` table with the following schema:
 
 ### 1. Yearly KPI Trends
 Track how the company's core metrics changed over 2021, 2022, and 2023.
-
+```sql
 SELECT EXTRACT(YEAR FROM order_date) as year,
        COUNT(order_id) as total_order,
        COUNT(DISTINCT customer_id) as total_customer, 
@@ -45,6 +45,7 @@ SELECT EXTRACT(YEAR FROM order_date) as year,
        AVG(total_price) as avg_order_value
 FROM beverage_sales
 GROUP BY year;
+```
 
 <img width="1042" height="147" alt="image" src="https://github.com/user-attachments/assets/c7592d47-603a-4b63-841f-68fb9e456d46" />
 
