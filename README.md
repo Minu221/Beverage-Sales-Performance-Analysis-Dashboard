@@ -69,7 +69,6 @@ ORDER BY year, month;
 ### 3. Top 10 High-Performing Products
 Analyze products by sales volume vs. revenue generation.
 * **By Revenue:** High-end items like *Veuve Clicquot* (~202M) and *Moët & Chandon* (~175M) generate the most value.
-* **By Volume:** Affordable options like *Hohes C Orange* (7.7M units) and *Tomato Juice* (7.3M units) have the highest demand.
 ```sql
 SELECT product,
        SUM(quantity) AS total_quantity,
@@ -95,7 +94,7 @@ LIMIT 10;
 
 
 ### 5. Customer Segment Analysis (B2B vs. B2C)
-Compare the purchasing behavior of retail consumers against business clients. While B2C customers account for the majority of order volume (**76.62%**), B2B customers yield a significantly higher Average Order Value (AOV).
+Compare the purchasing behavior of retail consumers against business clients. While B2C customers account for the majority of order volume, B2B customers yield a significantly higher Average Order Value (AOV).
 ```sql
 SELECT customer_type,
        COUNT(order_id) AS total_orders,
@@ -108,6 +107,7 @@ GROUP BY customer_type;
 
 ### 6. Discount Impact Analysis
 Evaluate if offering higher discounts effectively drives more sales and increases revenue.
+* **Insight:** While non-discounted transactions (`0.00`) yield the highest order count, offering a **10% discount (`0.10`)** acts as a powerful volume driver—generating the highest total quantity (85.9M units) and the largest revenue share (492.9M). This indicates that discounts are effectively used to incentivize high-volume bulk purchases (likely from B2B clients), rather than just increasing the overall number of separate orders.
 ```sql
 SELECT discount,
        COUNT(order_id) AS total_orders,
