@@ -1,7 +1,7 @@
 # Beverage Sales Performance Analysis (2021 - 2023)
 
 ## 📌 Project Overview
-This project analyzes the sales performance of a beverage company from 2021 to 2023. Using **SQL (PostgreSQL)** for data extraction and **Data Visualization tools (Excel/Power BI)** for reporting, the project explores revenue trends, customer behaviors (B2B vs. B2C), discount impacts, and regional sales distribution to provide data-driven business recommendations.
+This project analyzes the sales performance of a beverage company from 2021 to 2023. Using **SQL (PostgreSQL)** for data extraction and **Data Visualization tools (Power BI)** for reporting, the project explores revenue trends, customer behaviors (B2B vs. B2C), discount impacts, and regional sales distribution to provide data-driven business recommendations.
 
 ## 📊 Key Business Insights (KPIs)
 * **Total Revenue:** 1.18 Billion (bn)
@@ -128,13 +128,30 @@ Here is the interactive **Beverage Sales Performance Dashboard** used to monitor
 ![Beverage Sales Performance Dashboard](dashboard.png)
 
 ### Key Takeaways from the Dashboard:
-1. **Revenue by Category:** **Alcoholic Beverages** is the absolute powerhouse of the business, contributing **911.8M** out of the total 1.18B revenue, heavily outperforming Juices, Soft Drinks, and Water.
-2. **Regional Performance:** Sales are distributed quite evenly across German states, with **Hamburg** (~82.4M) and **Hessen** (~78.4M) taking the lead as the most lucrative markets.
-3. **Time-Series Insights:** A recurring dip in both orders and revenue is visible in **February** every year, followed by a strong recovery in March.
+
+1. **KPI Cards:**
+   * **Revenue:** The business made a total of **1.18bn** in 3 years.
+   * **Items Sold & Orders:** The company sold **208M** products across **9.0M** total orders.
+   * **Customers & Order Value:** There are **10K customers** in total. On average, a customer spends **130.74** per order (AOV).
+
+2. **Best Product Group (Revenue by Category):**
+   * The chart shows that **Alcoholic Beverages** brings in the most money. It is much bigger than Juices, Soft Drinks, and Water.
+
+3. **Sales Trends by Month (Orders & Revenue by Month):**
+   * Sales go down very low in **February**. 
+   * Right after that, sales jump up to the highest peak in **March**. For the rest of the year, sales stay steady.
+
+4. **Popular Products vs. Expensive Products:**
+   * **Most Items Sold:** Cheap drinks like *Hohes C Orange*, *Tomato Juice*, and *Granini Apple* have the highest sales volume (most units sold).
+   * **Most Money Made:** Expensive brands like *Veuve Clicquot* and *Moët & Chandon* bring in the highest revenue because their order value is very high.
+
+5. **Customer Types (Revenue by Customer Type):**
+   * **B2B (Business) customers** are the most important. They bring in **76.62%** of all the money.
+   * **B2C (Normal) customers** only bring in **23.38%** of the money.
 
 ---
 
 ## 🛠️ Tech Stack & Tools Used
 * **SQL (PostgreSQL):** Used for database creation, heavy data aggregation, and complex date-time analytical queries.
 * **Excel Pivot Tables:** Used for quick data validation and exploratory data summaries.
-* **Power BI / Excel Dashboard:** Used to design a clean, responsive executive dashboard for stakeholder reporting.
+* **Power BI:** Used to design a clean, responsive executive dashboard for stakeholder reporting.
